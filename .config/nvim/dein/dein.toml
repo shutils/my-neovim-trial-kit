@@ -1,0 +1,209 @@
+[[plugins]]
+repo = 'nvim-neo-tree/neo-tree.nvim'
+lua_add = 'require("config.neo-tree")'
+
+[[plugins]]
+repo = 'numToStr/Comment.nvim'
+lua_add = 'require("Comment").setup()'
+
+[[plugins]]
+repo = 'catppuccin/nvim'
+hook_add = '''
+colorscheme catppuccin-mocha
+'''
+
+[[plugins]]
+repo = 'rebelot/kanagawa.nvim'
+
+[[plugins]]
+repo = 'EdenEast/nightfox.nvim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+hook_source = '''
+let g:lexima_ctrlh_as_backspace=1
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+
+[[plugins]]
+repo = 'monaqa/dial.nvim'
+lua_add = 'require("config.dial")'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'stevearc/aerial.nvim'
+lua_add = 'require("config.aerial")'
+
+[[plugins]]
+repo = 'lewis6991/gitsigns.nvim'
+lua_add = 'require("config.gitsigns")'
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+lua_add = 'require("config.lualine")'
+
+[[plugins]]
+repo = 'folke/noice.nvim'
+depends = ['nui.nvim', 'nvim-notify']
+lua_add = 'require("config.noice")'
+
+[[plugins]]
+repo = 'rcarriga/nvim-notify'
+lua_add = 'require("config.nvim-notify")'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+hook_source = 'let g:vsnip_snippet_dir=expand("$CONF_DIR/vsnip")'
+hook_add = '''
+inoremap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+inoremap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+'''
+
+[[plugins]]
+repo = 'lambdalisue/gin.vim'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+
+[[plugins]]
+repo = 'lambdalisue/kensaku.vim'
+
+[[plugins]]
+repo = 'lambdalisue/kensaku-search.vim'
+hook_add = '''
+cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
+'''
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+on_source = 'mason.nvim'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_source = 'mason.nvim'
+
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+depends = ['mason-lspconfig.nvim', 'nvim-lspconfig']
+on_event = 'VimEnter'
+lua_post_source = 'require("config.mason")'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+lua_add = 'require("config.treesitter")'
+hook_done_update = '''
+TSUpdate
+'''
+
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+lua_add = 'require("config.toggleterm")'
+
+[[plugins]]
+repo = 'nvim-tree/nvim-web-devicons'
+lua_add = '''
+require('nvim-web-devicons').setup({
+  strict = true,
+  override_by_filename = {
+    ["docker-compose.yml"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Dockerfile",
+    },
+    ["docker-compose.yaml"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Dockerfile",
+    },
+    [".dockerignore"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Dockerfile",
+    },
+    ["dockerfile"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Dockerfile",
+    },
+  },
+  override_by_extension = {
+    ["svg"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Svg",
+    },
+    ["log"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Log",
+    },
+    ["txt"] = {
+      icon = "",
+      color = "#458ee6",
+      cterm_color = "68",
+      name = "Txt",
+    },
+  }
+})
+'''
+
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
+
+[[plugins]]
+repo = 'akinsho/bufferline.nvim'
+hook_source = '''
+set termguicolors
+'''
+lua_add = '''
+require("config.bufferline")
+'''
+
+[[plugins]]
+repo = 'uga-rosa/translate.nvim'
+lua_add = 'require("config.translate")'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'xiyaowong/nvim-cursorword'
+lua_add = 'vim.api.nvim_command("hi default CursorWord cterm=underline gui=underline")'
+
+[[plugins]]
+repo = 'folke/trouble.nvim'
+depends = 'nvim-web-devicons'
+lua_add = 'require("config.trouble")'
+
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+hook_add = '''
+	let g:signature_help_config = {
+	      \ 'border': v:true,
+	      \ 'maxWidth': 80,
+	      \ 'maxHeight': 30,
+	      \ 'contentsStyle': 'full',
+	      \ 'viewStyle': 'floating',
+	      \ 'onTriggerChar': v:false,
+	      \ 'multiLabel': v:false,
+	      \ 'fallbackToBelow': v:true,
+	      \ }
+call signature_help#enable()
+'''
